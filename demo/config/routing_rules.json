@@ -1,0 +1,7 @@
+{
+  "/()": {"GET": "home"},
+  "/product/sample/:product_id": {"GET": "product"},
+  "/download/:file_id:\\d+:int": {"GET": "download"},
+  "/math/PI/:pi:[0-9\\.]+:float": {"GET": "math"},
+  "/fruits/:fruits[]": {"GET": "fruits"}
+}

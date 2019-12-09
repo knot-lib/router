@@ -1,0 +1,6 @@
+{
+  "cache": {
+    "root": "%SAMPLE_DIR%/cache",
+    "expire": 60
+  }
+}

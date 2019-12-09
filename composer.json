@@ -1,0 +1,37 @@
+{
+  "name": "knot-lib/router",
+  "description": "Router library for kNot Framework.",
+  "keywords": ["PHP","Router"],
+  "homepage": "https://github.com/knot-lib/router",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Katsuki Shuto",
+      "email": "stk2k@knot-framework.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.1",
+    "stk2k/util": "~0.1",
+    "stk2k/file": "~0.1",
+    "knot-lib/exception": "~0.1",
+    "knot-lib/config": "~0.1",
+    "knot-lib/cache": "~0.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.3.0",
+    "php-coveralls/php-coveralls": "^2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "KnotLib\\Router\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "KnotLib\\Router\\Test\\": "test/include/",
+      "KnotLib\\Router\\Demo\\": "demo/include/"
+    }
+  }
+}
