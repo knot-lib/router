@@ -157,9 +157,13 @@ class RouteNode implements RouteNodeInterface
             $vars = array_replace($vars, $auery_vars);
         }
         // get first path section
-        $pos = strpos(substr($component,1), '/');
-        $first = $pos > 0 ? substr($component, 0, $pos + 1) : substr($component, 0);
-        $next_path = $pos > 0 ? substr($component, $pos + 1) : '';
+        $next_path = '';
+        $first = '';
+        if (strlen($component) > 0){
+            $pos = strpos(substr($component,1), '/');
+            $first = $pos > 0 ? substr($component, 0, $pos + 1) : substr($component, 0);
+            $next_path = $pos > 0 ? substr($component, $pos + 1) : '';
+        }
         // parse pattern
         $pattern = "@^/({$this->regex})$@";
         if (!preg_match($pattern, $first, $match) ){

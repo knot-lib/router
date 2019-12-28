@@ -177,12 +177,15 @@ class RouterTest extends TestCase
         $router->bind('/child/:var','GET','a');
         $router->bind('/child/:var','POST','b');
         $router->bind('/child/','GET','c');
+
         $router->route('/child/','GET');
         $this->assertEquals('c', $dispatcher->getDispatchedRouteName());
+
         $dispatcher->clear();
         $router->route('/child/123','GET');
         $this->assertEquals('a', $dispatcher->getDispatchedRouteName());
         $this->assertEquals(['var'=>'123'], $dispatcher->getDispatchedVars());
+
         $dispatcher->clear();
         $router->route('/child/123','POST');
         $this->assertEquals('b', $dispatcher->getDispatchedRouteName());
@@ -249,4 +252,19 @@ class RouterTest extends TestCase
         );
     }
 
+
+    /**
+     * @throws
+     */
+    public function testRoute2()
+    {
+        $dispatcher = new MyDispatcher();
+        $router = new Router($dispatcher);
+
+        $router->bind('/child/','GET','c');
+
+        $router->route('/child/','GET');
+        $this->assertEquals('c', $dispatcher->getDispatchedRouteName());
+        $this->assertEquals([], $dispatcher->getDispatchedVars());
+    }
 }
