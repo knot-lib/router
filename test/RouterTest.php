@@ -19,12 +19,11 @@ class MyDispatcher implements DispatcherInterface
     private $path;
     private $vars;
     private $route_name;
-    public function dispatch(string $path, array $vars, string $route_name)
+    public function dispatch(string $path, array $vars, string $route_name) : void
     {
         $this->path = $path;
         $this->vars = $vars;
         $this->route_name = $route_name;
-        return true;
     }
     public function clear()
     {

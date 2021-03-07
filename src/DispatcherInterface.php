@@ -12,5 +12,5 @@ interface DispatcherInterface
      * @param array $vars
      * @param string $route_name
      */
-    public function dispatch(string $path, array $vars, string $route_name);
+    public function dispatch(string $path, array $vars, string $route_name) : void;
 }
